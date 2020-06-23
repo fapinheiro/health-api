@@ -39,6 +39,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
 			// .cors().and().csrf().disable() // Interesting, the attacker makes the client trigger the request he wants to
 			// .cors().and().csrf().and()
 			.authorizeRequests()
+			.antMatchers(HttpMethod.GET, "/api/v1/status").permitAll()
             .antMatchers(HttpMethod.GET, "/api/actuator/**").permitAll()
 			.anyRequest().authenticated().and()
 			.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS); // this disables session creation on Spring Security

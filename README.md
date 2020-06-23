@@ -21,3 +21,11 @@ Displays trace information (by default the last few HTTP requests)
 Greatful shutdown the application
 
 Reference: https://www.baeldung.com/spring-boot-actuators
+
+## docker
+
+Play With Docker
+
+https://medium.com/@mingderwang/how-to-create-endpoints-for-your-docker-containers-in-pwd-af6920e11c7c
+
+docker container run --rm -d --name health-api -p 8089:8089 fapinheiro/health-api:1.0.0
