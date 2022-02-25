@@ -1,0 +1,17 @@
+server:
+  port: 80
+
+info:
+  app:
+    version: 1.0.2-SNAPSHOT-LOCAL
+
+management:
+  endpoint:
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: metrics,info,health,prometheus

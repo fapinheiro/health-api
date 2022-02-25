@@ -29,3 +29,15 @@ Play With Docker
 https://medium.com/@mingderwang/how-to-create-endpoints-for-your-docker-containers-in-pwd-af6920e11c7c
 
 docker container run --rm -d --name health-api -p 8089:8089 fapinheiro/health-api:1.0.0
+
+## build
+mvn clean package
+docker image build -t fapinheiro/healthapi:1.0.2 .
+
+## run
+docker container run --rm -d --name healthapi -p 8089:8089 fapinheiro/healthapi:1.0.0
+
+## deploy
+kubectl apply -f deployment.yml
+
+

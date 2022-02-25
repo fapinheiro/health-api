@@ -1,22 +1,15 @@
 FROM openjdk:11-jre-slim-buster
 
+# Created by
 LABEL maintainerName="Filipe Pinheiro"
-
 LABEL maintainerEmail="filipe.alves.pinheiro@gmail.com"
 
-ENV ENVIRONMENT dev
-
-# Moving jar file
-RUN mkdir -p /opt/health-api/
-WORKDIR /opt/health-api/
+# Setup workir
+RUN mkdir app
+WORKDIR /app
 
 # Copy jar file
-COPY target/*.jar .
+COPY target/health-api-*.jar /app/api.jar
 
-# Rename jar file
-COPY scripts/*.sh .
-RUN chmod +x rename-jar.sh
-RUN ./rename-jar.sh
-
-## Start webapp
-CMD java -jar webapp.jar
+# Start webapp
+CMD java -Dserver.port=80 -jar api.jar
