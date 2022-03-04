@@ -49,7 +49,7 @@ spec:
     spec:
       containers:
       - name: health-api
-        image: fapinheiro/healthapi:1.0.2
+        image: fapinheiro/healthapi:1.0.3
         livenessProbe:
           httpGet:
             path: /actuator/info
@@ -69,9 +69,9 @@ spec:
           successThreshold: 2
         resources:
           requests:
-            memory: 256Mi
+            memory: 128Mi
           limits:
-            memory: 512Mi
+            memory: 256Mi
 
 ---
 apiVersion: autoscaling/v2beta2
@@ -91,6 +91,13 @@ spec:
    pods:
     metric:
      name: http_server_requests_per_second
+    target:
+     type: AverageValue 
+     averageValue: 5
+ - type: Pods
+   pods:
+    metric:
+     name: jdbc_connections_per_second
     target:
      type: AverageValue 
      averageValue: 3

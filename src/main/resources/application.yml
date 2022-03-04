@@ -15,3 +15,24 @@ management:
     web:
       exposure:
         include: metrics,info,health,prometheus
+
+# Database properties
+spring:
+  h2:
+    console:
+      enabled: true
+  datasource:
+    url: jdbc:h2:mem:rewarddb
+    driverClassName: org.h2.Driver
+    username: sa
+    password: sa
+    sqlScriptEncoding: UTF-8
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: none
+  show-sql: true
+  properties:
+    hibernate:
+      jdbc:
+        time_zone: America/Sao_Paulo

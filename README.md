@@ -32,7 +32,7 @@ docker container run --rm -d --name health-api -p 8089:8089 fapinheiro/health-ap
 
 ## build
 mvn clean package
-docker image build -t fapinheiro/healthapi:1.0.2 .
+docker image build -t fapinheiro/healthapi:1.0.3 .
 
 ## run
 docker container run --rm -d --name healthapi -p 8089:8089 fapinheiro/healthapi:1.0.0

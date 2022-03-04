@@ -1,3 +1,4 @@
+package cib.isban.pt.healthapi.config;
 // package cib.isban.pt.healthapi;
 
 
