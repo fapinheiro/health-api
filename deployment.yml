@@ -93,12 +93,12 @@ spec:
      name: http_server_requests_per_second
     target:
      type: AverageValue 
-     averageValue: 5
+     averageValue: 10
  - type: Pods
    pods:
     metric:
-     name: jdbc_connections_per_second
+     name: jdbc_connections
     target:
      type: AverageValue 
-     averageValue: 3
+     averageValue: 4
  
