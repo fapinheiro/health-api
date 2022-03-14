@@ -49,7 +49,7 @@ spec:
     spec:
       containers:
       - name: health-api
-        image: fapinheiro/healthapi:1.0.4
+        image: fapinheiro/healthapi:1.0.5
         livenessProbe:
           httpGet:
             path: /actuator/info
@@ -97,7 +97,7 @@ spec:
  - type: Pods
    pods:
     metric:
-     name: jdbc_connections
+     name: jdbc_connections_active
     target:
      type: AverageValue 
      averageValue: 4

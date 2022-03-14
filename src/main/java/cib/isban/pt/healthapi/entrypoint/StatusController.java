@@ -7,7 +7,9 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @RestController
 @CrossOrigin
 public class StatusController {
@@ -18,6 +20,7 @@ public class StatusController {
     @GetMapping(path = "/status")
     public ResponseEntity<Void> getStatus() throws Throwable {
         jdbcTemplate.execute("call sleep(10)");// TODO Auto-generated method stub
+        log.info("Chamado ao getStatus");
         return ResponseEntity.ok().build();
     }
 

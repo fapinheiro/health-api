@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import cib.isban.pt.healthapi.dataprovider.h2.model.User;
 import cib.isban.pt.healthapi.usecase.user.ListarUsuarios;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @RestController
 @CrossOrigin
 public class UserController {
@@ -20,6 +22,7 @@ public class UserController {
 
     @GetMapping(path = "/users")
     public ResponseEntity<List<User>> getStatus() throws Throwable {
+        log.info("Chamado ao getUsers()");
         long t1 = System.currentTimeMillis();
         long t2 = System.currentTimeMillis();
         while (t2 - t1 < (1000 * 2)) {
